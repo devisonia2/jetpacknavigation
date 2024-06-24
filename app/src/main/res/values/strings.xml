@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">jetpacknavigation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enteryouremailtogetotp">Enter Your Email To Get OTP</string>
+    <string name="getotp">Get OTP</string>
+    <string name="Send">Send</string>
+    <string name="email">Email</string>
+    <string name="message">Message</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="Verify">Verify</string>
+    <string name="enterotp">Enter OTP</string>
+</resources>
