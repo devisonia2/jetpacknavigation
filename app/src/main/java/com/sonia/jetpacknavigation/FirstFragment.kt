@@ -68,25 +68,7 @@ class FirstFragment : Fragment() {
             }
         }
     }
-    override fun onResume() {
-        super.onResume()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-    }
 
     companion object {
         /**
