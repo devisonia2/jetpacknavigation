@@ -50,6 +50,7 @@ class FirstFragment : Fragment() {
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding?.btnSend?.setOnClickListener {
             if (binding.etEnterEmail?.text?.toString()?.trim().isNullOrEmpty()){
                 binding.etEnterEmail?.error="Enter Email"
@@ -66,7 +67,6 @@ class FirstFragment : Fragment() {
                 startActivity(intent)
             }
         }
-        super.onViewCreated(view, savedInstanceState)
     }
     override fun onResume() {
         super.onResume()
