@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.sonia.jetpacknavigation.databinding.FragmentFirstBinding
@@ -27,10 +28,10 @@ class FirstFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding: FragmentFirstBinding
-    private var bundle=Bundle()
-    private var intent=Intent(Intent.ACTION_SENDTO)
-    var mainActivity:MainActivity?=null
+    var binding: FragmentFirstBinding? = null
+    private var bundle = Bundle()
+    private var intent = Intent(Intent.ACTION_SENDTO)
+    var mainActivity: MainActivity? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,26 +45,31 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View ?{
+    ): View? {
         binding = FragmentFirstBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
-        return binding.root
+        return binding?.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.btnSend?.setOnClickListener {
-            if (binding.etEnterEmail?.text?.toString()?.trim().isNullOrEmpty()){
-                binding.etEnterEmail?.error="Enter Email"
-            }else if(Pattern.matches(Patterns.EMAIL_ADDRESS.toString(),binding?.etEnterEmail?.text.toString().trim())==false){
+            if (binding?.etEnterEmail?.text?.toString()?.trim().isNullOrEmpty()) {
+                binding?.etEnterEmail?.error = "Enter Email"
+            } else if (Pattern.matches(
+                    Patterns.EMAIL_ADDRESS.toString(),
+                    binding?.etEnterEmail?.text.toString().trim()
+                ) == false
+            ) {
                 binding?.etEnterEmail?.error = "Enter Valid Email"
-            }else{
-                val otp= Random.nextInt(1000..9999)
+            } else {
+                val otp = Random.nextInt(1000..9999)
                 bundle.putString("OTP", otp.toString())
-                mainActivity?.navController?.navigate(R.id.secondFragment,bundle)
+                mainActivity?.navController?.navigate(R.id.secondFragment, bundle)
 
-                intent.data= Uri.parse("mailto:")
+                intent.data = Uri.parse("mailto:")
                 intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(binding?.etEnterEmail?.text.toString()))
-                intent.putExtra("subject","OTP is:-${otp.toString().trim()}")
+                intent.putExtra("subject", "OTP is:-${otp.toString().trim()}")
                 startActivity(intent)
             }
         }
@@ -89,5 +95,6 @@ class FirstFragment : Fragment() {
                 }
             }
     }
-
 }
+
+

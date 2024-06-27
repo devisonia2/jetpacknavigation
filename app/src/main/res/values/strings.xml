@@ -10,4 +10,13 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="Verify">Verify</string>
     <string name="enterotp">Enter OTP</string>
+    <string name="title_activity_bottomnav">bottomnav</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="new_pass">Pass</string>
+    <string name="conf_pass">Confirmed Pass</string>
+    <string name="save_new_pass">Save New Pass</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_new_password">Save New Password</string>
 </resources>
